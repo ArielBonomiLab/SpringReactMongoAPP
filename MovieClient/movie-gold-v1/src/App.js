@@ -1,16 +1,14 @@
 import './App.css';
 import api from './api/axiosConfig';
-import {userState, useEffect} from 'react';
+import {useState, useEffect} from 'react';
 
 function App() {
 
-  const[movies, setMovies] = userState();
+  const [movies, setMovies] = useState();
 
   const getMovies = async () => {
 
     try{
-      
-      console.log('prueba');
 
       const response = await api.get("/api/v1/movies");
   
